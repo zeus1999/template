@@ -1,0 +1,227 @@
+$primary-color: #3498db;
+$secondary-color: #1abc9c;
+$default-font: "Roboto";
+$toolbarHeight: 96px;
+
+@font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2") format('woff2');
+}
+  
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "RobotoLight";
+    src: url("../fonts/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+* {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+
+html, body {
+    margin: 0;
+    overflow: hidden;
+    font-family: $default-font;
+}
+
+
+template-toolbar {
+    display: block;
+    width: 100%;
+    height: $toolbarHeight;
+    font-size: 24px;
+    background-color: $primary-color;
+
+    template-toolbar-button {
+
+        display: block;
+        float: left;
+
+        height: $toolbarHeight;
+        width: $toolbarHeight;
+
+        button {
+            background-color: transparent;
+            outline: none;
+            border: 0;
+            font-size: 24px;
+        
+            height: 100%;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+    }
+
+    template-toolbar-title {
+
+        display: block;
+        float: left;
+        height: $toolbarHeight;
+        min-width: 128px;
+        margin-left: 16px;
+        margin-right: 16px;
+
+        span {
+            display: block;
+            height: 100%;
+            line-height: calc(#{$toolbarHeight} - 4px);
+        }
+     
+    }
+}
+
+
+template-container {
+    display: block;
+    width: 100%;
+    height: calc(100vh - #{$toolbarHeight});
+
+    template-sidenav {
+        width: 360px;
+        height: 100%;
+        //background-color: red;
+        float: left;
+        border-right: 1px #bdc3c7 solid;
+
+        ul {
+            width: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                width: 100%;
+                height: 64px;
+            
+                span[title] {
+                    display: block;
+                    height: 100%;
+                    width: calc(100% - 64px);
+                    padding: 16px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    float: left;
+                    line-height: 28px;
+                }
+
+                span[icon] {
+                    display: block;
+                    height: 100%;
+                    width: 64px;
+                    padding: 16px;
+                    float: left;
+                    font-size: 24px;
+                }
+
+                
+
+            }
+
+            li:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+            }
+        }
+    
+    }
+
+    template-content {
+        width: calc(100vw - 360px);
+        height: 100%;
+        background-color: #ecf0f1;
+        float: left;
+    }
+
+
+}
+
+
+@media(min-width: 900px){
+
+    [menu] {
+        display: none;
+    }
+
+    template-container {
+        template-sidenav {
+            display: block !important;
+        }
+    }
+
+}
+
+@media(max-width: 900px){
+
+    template-content {
+        width: 100% !important;
+    }
+
+    template-sidenav {
+        z-index: 100;
+        width: 100% !important;
+    }
+
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+.container {
+    width: 100%;
+    display: grid;
+    padding: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    gap: 20px;
+}
+
+.box {
+    height: 200px;
+    color: white;
+    border: 2px solid white;
+    position: relative;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
