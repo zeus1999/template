@@ -201,7 +201,7 @@ template-container {
 
 
 
-.container {
+template-grid-container {
     width: 100%;
     display: grid;
     padding: 16px;
@@ -209,7 +209,7 @@ template-container {
     gap: 20px;
 }
 
-.box {
+template-grid-box {
     height: 200px;
     color: white;
     border: 2px solid white;
