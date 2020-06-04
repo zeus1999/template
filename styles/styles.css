@@ -108,7 +108,8 @@ template-container {
     width: calc(100vw - 360px);
     height: 100%;
     background-color: #ecf0f1;
-    float: left; }
+    float: left;
+    overflow: auto; }
 
 @media (min-width: 900px) {
   [menu] {

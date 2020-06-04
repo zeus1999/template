@@ -157,6 +157,7 @@ template-container {
         height: 100%;
         background-color: #ecf0f1;
         float: left;
+        overflow: auto;
     }
 
 
@@ -190,16 +191,9 @@ template-container {
 
 }
 
-
 .hidden {
     display: none;
 }
-
-
-
-
-
-
 
 .container {
     width: 100%;
